@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <button>Button1</button>
+        <button>Button2</button>
+        <button>Button3</button>
+        <button>Button4</button>
+    </div>
+
+    <script>
+        /*var btns = document.querySelectorAll("button");
+        for(var i=0; i<btns.length; i++){
+            btns[i].addEventListener("click",function (e) {
+                var elem = e.currentTarget;//element
+                alert(elem.innerText+" "+e.type)
+            })
+        }*/
+        var parent = document.querySelector("div");
+        parent.addEventListener("click",function (event) {
+            var button = event.target;
+            alert("Click was on "+button.textContent + "; this: " + this.tagName);
+        })
+    </script>
+</body>
+</html>
