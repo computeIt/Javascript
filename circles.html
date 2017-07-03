@@ -1,0 +1,39 @@
+/*рисует разноцветные кружочки в месте клика, а если кликнуть по кружочку, то тот исчезает*/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var diameter = 40;
+
+        function color() {
+            return '#'+Math.floor(Math.random()*16777215).toString(16).toUpperCase();
+        }
+
+        function Circle(x, y, size) {
+            var el = document.createElement("div");
+            el.style.width = size + "px";
+            el.style.height = size + "px";
+            el.style.borderRadius = "50%";
+            el.style.backgroundColor = color();
+            el.style.position = "absolute";
+            el.style.top = (y-(size/2))+"px";
+            el.style.left = (x-20)+"px";
+            document.body.appendChild(el);
+        }
+
+        document.documentElement.addEventListener("click",function (event) {
+            var elClicked = event.target;
+            if(elClicked.tagName === "DIV"){
+                elClicked.remove();
+            }
+            else {
+                new Circle(event.clientX,event.clientY,diameter);
+            }
+        })
+    </script>
+</body>
+</html>
