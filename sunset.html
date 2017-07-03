@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script scr="jquery-ui-1.12.1\jquery-ui.js"></script>
+    <script scr="jquery.js"></script>
+    <style>
+        .sky{
+            position: absolute;
+            top : 0;
+            left : 0;
+            width: 100vw;
+            height: 67vh;
+            background-color: lightskyblue;
+        }
+        .land{
+            position: absolute;
+            top : 67vh;
+            left : 0;
+            width: 100vw;
+            height: 33vh;
+            background-color: darkgreen;
+            z-index: 10;
+        }
+        .sun{
+            position: absolute;
+            top : 5vh;
+            left: 5vw;
+            width: 10vh;
+            height: 10vh;
+            border-radius: 7vh;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div class="sky" id="sky"></div>
+<div class="land" id="land"></div>
+<div class="sun" id="sun"></div>
+<script>
+    function move() {/*d, finalX, finalY, time*/
+        var x0 = sun.offsetLeft;
+        var y0 = sun.offsetTop;
+
+        var nStep = t/tStep;
+
+        var xStep = (xFinal - x0)/nStep;
+        var yStep = (yFinal - y0)/nStep;
+
+        var sI = setInterval(function (){
+            var x = sun.offsetLeft;
+            var y = sun.offsetTop;
+
+            if(x > xFinal && y > yFinal){
+                sky.style.backgroundColor = "#000033";
+                land.style.backgroundColor = "#003300";
+
+                clearInterval(sI);
+            }
+            sun.style.left = (x+xStep) + "px";
+            sun.style.top = (y+yStep) + "px";
+            sun.style.backgroundColor = "rgb(255, "+yel+", 0)";
+            yel = yel - 2;
+
+        }, tStep);
+    }
+    var xFinal = 800;
+    var yFinal = 450;
+    var t = 5000;
+    var tStep = 40;
+    var yel = 255;
+
+    var sun = document.getElementById("sun");
+    var sky = document.getElementById("sky");
+    var land = document.getElementById("land");
+    sun.addEventListener("click", move);
+</script>
+
+</body>
+</html>
