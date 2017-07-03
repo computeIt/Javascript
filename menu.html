@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li><span>Menu</span>
+                <ul>
+                    <li><span>Item 1</span>
+                        <ul>
+                            <li><span>Item 1-1</span>
+                                <ul>
+                                    <li><span>Item 1-1-1</span></li>
+                                    <li><span>Item 1-1-2</span></li>
+                                </ul>
+                            </li>
+                            <li><span>Item 1-2</span></li>
+                        </ul>
+                    </li>
+                    <li><span>Item 2</span>
+                        <ul>
+                            <li><span>Item 2-1</span>
+                                <ul>
+                                    <li><span>Item 2-1-1</span></li>
+                                </ul>
+                            </li>
+                            <li><span>Item 2-2</span>
+                                <ul>
+                                    <li><span>Item 2-2-1</span></li>
+                                    <li><span>Item 2-2-2</span></li>
+                                </ul>
+                            </li>
+                            <li><span>Item 2-3</span></li>
+                        </ul>
+                    </li>
+                    <li><span>Item 3</span>
+                        <ul>
+                            <li><span>Item 3-1</span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script>
+        var container = document.querySelector("div");
+        container.addEventListener("click",menu);
+        function menu(event) {
+            var clicked = event.target;
+            var parent = clicked.parentNode;
+            var ulChild = parent.querySelector("ul");
+            if(!ulChild){
+                return;
+            }
+            ulChild.classList.toggle("hide");
+        }
+    </script>
+</body>
+</html>
