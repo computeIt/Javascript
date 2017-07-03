@@ -1,0 +1,41 @@
+*{
+    font-family: Arial;       /* I hate Times */
+}
+.container{                   /* contains everything */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 20vw;
+    text-align: center;
+}
+.articlesWindow{              /* articles container */
+    height: 40vh;
+    width: 100%;
+    overflow: hidden;
+
+    margin-bottom: 1vh;
+}
+.article{                    /* one article */
+    height: 8vh;
+
+    font-size: 5vh;
+    line-height: 8vh;
+
+    background: linear-gradient(#eeeeee, #ffffff, #aaaaaa); /* i do like it! */
+    color: darkblue;
+}
+.but{                       /* buttons */
+    outline: none;
+    border: hidden;
+
+    font-size: 3vh;
+    padding: 1vh 1vw;
+    margin: 0 1vw;
+
+    border-radius: 1vh;
+
+    background-color: darkblue;
+    color: white;
+}
