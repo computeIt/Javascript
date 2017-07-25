@@ -1,0 +1,21 @@
+/*в данном варианте рассматривается возможность связывания глобальных переменных*/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+    <script src="scopes.js"></script>
+</head>
+<body>
+    <div ng-app="scopes" ng-controller="scopesCtrl">
+        <input ng-model="model.name"><span>{{model.name}}</span>
+        <div ng-controller="first">
+            <input ng-model="model.name"> <span>{{model.name}}</span>
+        </div>
+        <div ng-controller="second">
+            <input ng-model="model.name"> <span>{{model.name}}</span>
+        </div>
+    </div>
+</body>
+</html>
