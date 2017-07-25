@@ -1,0 +1,33 @@
+*{
+    margin:0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.page{
+    width: 100vw;
+    height: 90vh;
+    font-size: 10vh;
+    text-align: center;
+}
+
+.sasha{
+    background-color: #ccccff;
+    color:#000066;
+}
+.masha{
+    background-color: #ffcccc;
+    color: #660000;
+}
+.vasya{
+    background-color: #ccffcc;
+    color: #006600;
+}
+.navbar{
+    width: 100vw;
+    height: 10vh;
+
+}
