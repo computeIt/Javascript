@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+    <script src="randomTable.js"></script>
+    <link rel="stylesheet" href="randomTable.css">
+</head>
+<body ng-app="randomTable" ng-controller="randomTableCtrl">
+<table class="centered">
+    <tr ng-repeat="row in tbl">
+        <td ng-repeat="column in row" ng-class="{
+            'red' : column < 0, 'green' : column >= 0}">{{column}}</td>
+    </tr>
+</table>
+</body>
+</html>
