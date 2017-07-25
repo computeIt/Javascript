@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+    <script src="invoiceCntr.js"></script>
+    <style>
+        .cont{
+            position: absolute;
+            left: 50%;
+            top:50%;
+            transform: translate(-50%, -50%);
+        }
+        .cont input{
+            margin: 1vh 1vw;
+        }
+    </style>
+</head>
+<body>
+<div class="cont" ng-app="invoice" ng-controller="invoiceCtrl">
+    <input type="number" ng-model="qty"> Quantity <br>
+    <input type="number" ng-model="prc"> Price
+    <select ng-model="curr">
+        <option ng-repeat="(k,v) in currList">{{k}}</option>
+    </select><br>
+    <b>Total: </b>
+    <span ng-repeat="(k,v) in currList">{{k}} {{total(k) | number : 2}}; </span>
+
+</div>
+</body>
+</html>
